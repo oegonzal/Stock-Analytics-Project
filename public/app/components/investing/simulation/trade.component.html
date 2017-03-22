@@ -1,0 +1,185 @@
+<div id="masthead">  
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-7">
+		<h2>Trade 
+		</h2>
+	  </div>
+	</div>
+	<hr style="border-top: 1px solid #a0a0a0">
+  </div><!-- /cont -->
+</div>
+
+<br>
+
+<md-content class="border_1">
+  <md-content layout="row" layout-padding>
+    <div layout="column" flex="50" class="light_gray_background">
+  	  <h1 class="md-title">Stock Order</h1>
+      <br>
+      <h3>Cash Available: {{vm.simulation.available_cash}}</h3>
+      <h3>Current Balance: {{vm.simulation.stock_value}}</h3>
+      <md-button ng-click="vm.updateAccountValue()" class="md-raised" style="margin-top: 30px;">Update Current Balance</md-button>
+    </div>
+
+    <div layout="column" flex="50" class="light_gray_background">
+      <md-autocomplete
+            ng-disabled="vm.isDisabled"
+            md-no-cache="vm.noCache"
+            md-selected-item="vm.chosen_stock"
+            md-search-text-change="vm.searchTextChange(vm.searchText)"
+            md-search-text="vm.searchText"
+            md-selected-item-change="vm.selectedItemChange(item)"
+            md-items="item in vm.querySearch(vm.searchText)"
+            md-item-text="item.display"
+            md-min-length="0"
+            placeholder="What stock do you want to trade?"
+            md-menu-class="autocomplete-custom-template">>
+          <md-item-template>
+            <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.display}}</span>
+          </md-item-template>
+          <md-not-found>
+            No states matching "{{vm.searchText}}" were found.
+            <a ng-click="vm.newState(vm.searchText)">Create a new one!</a>
+          </md-not-found>
+      </md-autocomplete>
+
+      <div layout="row" flex="100">
+        <div layout="column" flex="33">
+          <md-input-container style="margin-top: 30px;">
+            <label>Action</label>
+            <md-select ng-model="vm.action" type="action" class="md-no-underline">
+                <md-option value="buy">Buy</md-option>
+                <md-option value="sell">Sell</md-option>
+                <md-option value="sell_short">Sell Short</md-option>
+                <md-option value="buy_to_cover">Buy To Cover</md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container style="margin-top: 30px;">
+            <label>Order Type</label>
+            <md-select type="order_type" ng-model="vm.order_type" class="md-no-underline">
+                <md-option value="limit">Limit</md-option>
+                <md-option value="market">Market</md-option>
+                <md-option value="stop_limit">Stop Limit</md-option>
+                <md-option value="stop_market">Stop Market</md-option>
+                <md-option value="trailing_stop_amt">Trailing Stop $</md-option>
+                <md-option value="trailing_stop_perc">Trailing Stop %</md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+
+
+        <div style="height: 70%; width: 70%; background-color: #f4f4f4; margin: 30px 15px; border: 1px #d0d0d0 solid; box-shadow: 1px 1px 3px #d0d0d0;">
+            <span style="font-family: Roboto, Helvetica Neue, sans-serif; font-size: .8em; font-weight: 700; float: left; clear: both; margin: 5px;">Current Price:</span>
+            <span style="font-family: Roboto, Helvetica Neue, sans-serif; font-size: .8em; font-weight: 700; float: left; clear: both; margin: 5px;">Bid:</span>
+            <span style="font-family: Roboto, Helvetica Neue, sans-serif; font-size: .8em; font-weight: 700; float: left; clear: both; margin: 5px;">Ask:</span>
+        </div>
+      </div>
+
+      <md-input-container class="md-block" flex-gt-sm ng-show="vm.order_type === 'stop_limit' || vm.order_type === 'stop_market'">
+        <label>Price</label>
+        <input ng-model="vm.price">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm ng-show="vm.order_type === 'limit' || vm.order_type === 'stop_limit'">
+        <label>Action Price</label>
+        <input ng-model="vm.action_price">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm ng-show="vm.order_type === 'trailing_stop_perc' ">
+        <label>Percentage</label>
+        <input ng-model="vm.trailing_percentage">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm ng-show="vm.order_type === 'trailing_stop_amt' ">
+        <label>Dollar Amount</label>
+        <input ng-model="vm.tariling_amount">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm style="color: black;">
+        <label>Quantity</label>
+        <input ng-model="vm.quantity">
+      </md-input-container>
+
+      <md-button ng-click="vm.executeTrade()" class="md-raised">Execute</md-button>
+    </div>
+  </md-content>
+
+  <md-content layout="row" layout-padding>
+    <div layout="column" flex="100" class="light_gray_background">
+      <h3>Last few trades</h3>
+      <div style="border-top: 1px solid #a2a2a2; margin: 10px 0px;"></div>
+      <md-list>
+        <md-list-item class="md-3-line">
+          <div class="md-list-item-text">
+            <h5>Stock</h5>
+          </div>
+          <div class="md-list-item-text">
+            <h5>Action</h5>
+          </div>
+          <div class="md-list-item-text">
+            <h5>Quantity</h5>
+          </div>
+          <div class="md-list-item-text">
+            <h5>Price</h5>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-list-item class="md-3-line" ng-repeat="transaction in vm.simulation.transaction_history | limitTo:-5 ">
+          <div class="md-list-item-text">
+            {{transaction.name}}
+          </div>
+          <div class="md-list-item-text">
+            {{transaction.action}}
+          </div>
+          <div class="md-list-item-text">
+            {{transaction.quantity}}
+          </div>
+          <div class="md-list-item-text">
+            {{transaction.price}}
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+      </md-list>
+    </div>
+
+    <div layout="column" flex="100" class="light_gray_background">
+      <h3>Current Stock details</h3>
+      <div style="border-top: 1px solid #a2a2a2; margin: 10px 0px;"></div>
+      <md-list>
+        <md-list-item class="md-3-line">
+          <div class="md-list-item-text">
+            <h3>Stock</h3>
+          </div>
+          <div class="md-list-item-text">
+            <h3>Quantity</h3>
+          </div>
+          <div class="md-list-item-text">
+            <h3>Price</h3>
+          </div>
+          
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-list-item class="md-3-line" ng-repeat="stock in vm.simulation.stocks">
+          <div class="md-list-item-text">
+            <h5>{{stock.name}}</h5>
+          </div>
+          <div class="md-list-item-text">
+            <h5>{{stock.quantity}}</h5>
+          </div>
+          <div class="md-list-item-text">
+            <h5>{{stock.price}}</h5>
+          </div>
+          
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+      </md-list>
+    </div>
+
+    <div layout="column" flex="100" class="light_gray_background">
+      <h3>Statistics</h3>
+      <div style="border-top: 1px solid #a2a2a2; margin: 10px 0px;"></div>
+    </div>
+  </md-content>
+</md-content>

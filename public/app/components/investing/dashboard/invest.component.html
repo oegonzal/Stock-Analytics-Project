@@ -1,0 +1,66 @@
+<!--Sidebar-->
+<nav>
+	<div class="navbar-default sidebar" role="navigation">
+		<div class="sidebar-nav navbar-collapse">
+			<ul ng-metis class="nav metisMenu">
+				<li class="sidebar-search">
+					<div class="input-group custom-search-form">
+						<input type="text" class="form-control" placeholder="Search...">
+						<span class="input-group-btn">
+						<button class="btn btn-default" type="button">
+							<i class="fa fa-search"></i>
+						</button>
+					</span>
+					</div>
+					<!-- /input-group -->
+				</li>
+				<!--
+				<li>
+					<a ng-link="['InvestDashboard']"><i class="fa fa-dashboard fa-fw"></i> Stocks Dashboard</a>
+				</li>
+				-->
+				<li>
+					<a ng-link="['Home']"><i class="fa fa-dashboard fa-fw"></i> Home </a>
+				</li>
+				<!--
+				<li>
+					<a ng-link="['Stock']"><i class="fa fa-tablet fa-fw"></i> Stocks</a>
+				</li>
+				-->
+				<li>
+					<a ng-link="['Graph']"><i class="fa fa-table fa-fw"></i> Trend Tables</a>
+				</li>
+				<li>
+					<a ng-link="['Screen']"><i class="fa fa-bar-chart-o fa-fw"></i> Screening</a>
+				</li>
+				<li>
+					<a ng-link="['Watchlist']"><i class="fa fa-edit fa-fw"></i> Watchlists </a>
+				</li>
+				<li>
+					<a ng-link="['Simulation']"><i class="fa fa-database fa-fw"></i> Simulations </a>
+				</li>
+				<li>
+					<a href="#" ><i class="fa fa-files-o fa-fw"></i> Sectors <span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="investing/gold">Gold</a>
+						</li>
+						<li>
+							<a ng-link="['Oil']">Oil</a>
+						</li>
+					</ul>
+					<!-- /.nav-second-level -->
+				</li>
+			</ul> 
+		</div>
+		<!-- /.sidebar-collapse -->
+	</div>
+</nav>
+
+<div id="page-wrapper">
+	<!--Page View-->
+	<div class="container">
+		<!-- ng-outlet is so the app know where to put the new views-->
+		<ng-outlet></ng-outlet>
+	</div>
+</div>

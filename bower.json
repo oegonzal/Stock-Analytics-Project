@@ -1,0 +1,58 @@
+{
+  "name": "library",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Oscar Gonzalez-Barrios <enfav8@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.5.0",
+    "angular-component-router": "^0.2.1",
+    "angular": "^1.5.5",
+    "Materialize": "materialize#^0.97.6",
+    "jquery": "^2.2.3",
+    "angular-animate": "^1.5.5",
+    "animate.css": "^3.5.1",
+    "metisMenu": "^2.5.2",
+    "angular-resource": "^1.5.5"
+  },
+  "devDependencies": {
+    "angular-material": "^1.1.1",
+    "ngReact": "^0.3.0",
+    "react": "^15.3.2",
+    "d3": "3.5.17"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.min.css",
+        "less/bootstrap.less"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "less/font-awesome.less",
+        "css/font-awesome.min.css",
+        "scss/font-awesome.scss"
+      ]
+    },
+    "Materialize": {
+      "main": []
+    }
+  },
+  "resolutions": {
+    "d3": "3.5.17"
+  }
+}

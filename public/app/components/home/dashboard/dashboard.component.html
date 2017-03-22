@@ -1,0 +1,53 @@
+<!--Sidebar-->
+<nav>
+	<div class="navbar-default sidebar" role="navigation">
+		<div class="sidebar-nav navbar-collapse">
+			<ul ng-metis class="nav metisMenu">
+				<li class="sidebar-search">
+					<div class="input-group custom-search-form">
+						<input type="text" class="form-control" placeholder="Search...">
+						<span class="input-group-btn">
+						<button class="btn btn-default" type="button">
+							<i class="fa fa-search"></i>
+						</button>
+					</span>
+					</div>
+					<!-- /input-group -->
+				</li>
+				<li>
+					<a ng-link="['Home']"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+				</li>
+				<li>
+					<a id="invest_link" ng-link="['Invest']"><i class="fa fa-dashboard fa-fw"></i>Stocks</a>
+				</li>
+				<li>
+					<a id="invest_link" ng-link="['Blog']"><i class="fa fa-dashboard fa-fw"></i>Blog</a>
+				</li>
+			</ul> 
+		</div>
+		<!-- /.sidebar-collapse -->
+	</div>
+</nav>
+
+<div id="page-wrapper">
+	<!--Page Header-->		
+	<div id="masthead">  
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-7">
+			<h1>Dashboard
+			</h1>
+		  </div>
+		</div>
+		<hr style="border-top: 1px solid #a0a0a0">
+	  </div><!-- /cont -->
+	</div>
+	<br>
+
+	<!--Page View-->
+	<div class="container">
+		<!-- Anything you want to appear in the landing page -->
+		<landing-page></landing-page>
+		<!--<ng-outlet></ng-outlet>-->
+	</div>
+</div>

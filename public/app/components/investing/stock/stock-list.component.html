@@ -1,0 +1,46 @@
+<!--Page Header-->		
+<div id="masthead">  
+	<div class="row">
+	  <div class="col-md-7">
+		<h2>Stock List
+		</h2>
+	  </div>
+	</div>
+	<hr style="border-top: 1px solid #a0a0a0">
+</div>
+
+<button class="btn btn-info" ng-click="model.goToCreate()">Add Stock</button>
+<br><br>
+
+<div>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Index</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Equity</th>
+		</tr>
+		<tr ng-repeat="stock in model.stocks">
+			<td>{{stock.name}}</td>
+			<td>{{stock.index}}</td>
+			<td>{{stock.price}}</td>
+			<td>{{stock.lastTradingQuantity}}</td>
+			<td>{{stock.price * stock.lastTradingQuantity}}</td>
+			<td>
+				<div class="btn-group">
+					<button class="btn btn-default" ng-click="model.goToEdit(stock._id)">
+						<span class="glyphicon glyphicon-edit"></span>
+					</button>
+					<button class="btn btn-default" ng-click="model.goToDetail(stock._id)">
+						<span class="glyphicon glyphicon-zoom-in"></span>
+					</button>
+					<a class="btn btn-default" ng-click="model.goToDelete(stock._id)">
+						<span class="glyphicon glyphicon-remove"></span>
+					</a>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+

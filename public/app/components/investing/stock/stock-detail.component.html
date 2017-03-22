@@ -1,0 +1,26 @@
+<!--Page Header-->		
+<div id="masthead">  
+	<div class="row">
+	  <div class="col-md-7">
+		<h2>Stock Details
+		</h2>
+	  </div>
+	</div>
+	<hr style="border-top: 1px solid #a0a0a0">
+</div>
+
+<h3>This are the Details for Stock: {{model.id}}</h3>
+
+<ul>
+	<li><a ng-link="['Overview']">Overview</a></li>
+	<li><a ng-link="['History']">History</a></li>
+	<li><a ng-link="['Suggestion']">Suggestion</a></li>
+</ul>
+
+<ng-outlet></ng-outlet>
+
+<br><br>
+
+<a ng-link="['StockList']" class="btn btn-info"> Go back </a>
+
+<hr>

@@ -1,0 +1,26 @@
+<page-header>Blog Posts</page-header>
+
+<blog-content></blog-content>
+
+<form>
+	<label style="margin: 10px 0px;">Title</label>
+	<br>
+	<input ng-model="vm.newBlog.title" type="text" style="width: 80%;">
+
+	<br>
+	<label style="margin: 10px 0px;">Text</label>
+	<br>	
+	<textarea ng-model="vm.newBlog.text" type="text" style="height: 200px; width: 80%;"></textarea>
+
+	<br>
+	<a style="margin: 10px 0px;" ng-click="vm.savePost()" class="btn btn-default">Save</a>
+</form>
+
+
+<br>
+<br>
+<div ng-repeat="post in vm.blogs">
+	<h3>{{post.title}} {{post.createdOn | date:'MM-dd-yyyy' }}</h3>
+	<p>{{post.text}}</p>
+</div>
+

@@ -1,0 +1,67 @@
+<!--Page Header-->		
+<div id="masthead">  
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-7">
+		<h2>Simulation
+		</h2>
+	  </div>
+	</div>
+	<hr style="border-top: 1px solid #a0a0a0">
+  </div><!-- /cont -->
+</div>
+
+<br>
+
+<md-content class="md-padding" layout-xs="column" layout="row">
+  <div flex-xs layout="row">
+	  <md-card>
+	    <!--<img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">-->
+	    <md-card-title>
+	      <md-card-title-text>
+	        <span class="md-headline">Add Simulation</span>
+	      </md-card-title-text>
+	    </md-card-title>
+	    <md-card-content>
+	    	<md-input-container class="md-block" flex-gt-sm>
+		        <label>Simulation Name</label>
+		        <input ng-model="vm.newSimulation.name">
+		    </md-input-container>
+		    <md-input-container class="md-block" flex-gt-sm>
+		        <label>Initial Amount</label>
+		        <input ng-model="vm.newSimulation.available_cash">
+		     </md-input-container>
+	    </md-card-content>
+	    <md-card-actions layout="column" layout-align="start">
+	      <md-button class="md-raised" ng-click="vm.saveSimulation()">Save Simulation</md-button>
+	    </md-card-actions>
+	  </md-card>
+	  <md-card ng-repeat="sim in vm.simulations">
+	    <!--<img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">-->
+	    <md-card-title>
+	      <md-card-title-text>
+	        <span class="md-headline">{{sim.name}}</span>
+	      </md-card-title-text>
+	    </md-card-title>
+	    <md-card-content>
+	      <p>
+	        Balance: {{sim.current_value}}
+	      </p>
+	      <p>
+	        Today's change: {{sim.dayChg}}
+	      </p>
+	      <p>
+	        Weekly change: {{sim.weekChg}}
+	      </p>
+	      <p>
+	        Monthly change: {{sim.monthChg}}
+	      </p>
+	    </md-card-content>
+	    <md-card-actions layout="column" layout-align="start">
+	      <md-button class="md-raised" ng-click="vm.goToTrade(sim._id)">Trade</md-button>
+	      <md-button class="md-raised" ng-click="vm.goToHistory(sim._id)">History</md-button>
+	    </md-card-actions>
+	  </md-card>
+	</div>
+
+</md-content>

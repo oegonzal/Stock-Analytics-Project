@@ -1,0 +1,19 @@
+<!--Page Header-->		
+<div id="masthead">  
+	<div class="row">
+	  <div class="col-md-7">
+		<h2>Stock Delete
+		</h2>
+	  </div>
+	</div>
+	<hr style="border-top: 1px solid #a0a0a0">
+</div>
+
+<h3>Are you sure you want to delete stock: {{model.id}} ?</h3>
+
+<br><br>
+
+<a ng-link="['StockList']" class="btn btn-info"> Go back </a>
+<a ng-click="model.remove()" class="btn btn-danger"> Delete </a>
+
+<hr>

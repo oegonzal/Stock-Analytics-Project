@@ -1,0 +1,30 @@
+[
+	{
+		"id"   : 1,
+		"name" : "Tester1",
+		"index": "DUST",
+		"price": 1.39,
+		"rating": 5
+	},
+	{
+		"id"   : 2,
+		"name" : "Tester2",
+		"index": "NUGT",
+		"price": 97.88,
+		"rating": 3
+	},
+	{
+		"id"   : 3,
+		"name" : "Tester3",
+		"index": "DWTI",
+		"price": 87.89,
+		"rating": 5
+	},
+	{
+		"id"   : 4,
+		"name" : "Tester4",
+		"index": "UWTI",
+		"price": 23.13,
+		"rating": 3
+	}
+]

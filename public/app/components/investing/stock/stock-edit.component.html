@@ -1,0 +1,63 @@
+<!--Page Header-->		
+<div id="masthead">
+	<div class="row">
+	  <div class="col-md-7">
+		<h2> Edit Stock
+		</h2>
+	  </div>
+	</div>
+	<hr style="border-top: 1px solid #a0a0a0">
+</div>
+
+<div class="container">
+    <div class="row">
+        <form role="form" ng-submit="model.edit()">
+            <div class="col-lg-6">
+                <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span> Required Field</strong></div>
+                <div class="form-group">
+                    <label for="InputName">Stock Name: </label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="InputName" ng-model="model.name" value="{{model.name}}" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputIndex">Stock Index: </label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="InputIndex" ng-model="model.index" value="{{model.index}}" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+				{{stock.index}}
+				<div class="form-group">
+                    <label for="InputOption">Option: </label>
+                    <div class="input-group">
+                        <select class="form-control" id="InputOption" ng-model="model.option">
+						  <option value="" disabled selected>Select an option...</option>
+						  <option value="Buy">Buy</option>
+						  <option value="Sell">Sell</option>
+						  <option value="Sell Short">Sell Short</option>
+						  <option value="Buy Long">Buy Long</option>
+						</select>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputPrice">Price: </label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="InputPrice" ng-model="model.price" value="{{model.price}}" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputQuantity">Quantity: </label>
+                    <div class="input-group">
+                        <input type="text" id="InputQuantity" class="form-control" ng-model="model.quantity" value="{{model.quantity}}" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <input type="submit" id="submit" value="Update" class="btn btn-success pull-right">
+            </div>
+        </form>
+    </div>
+</div>

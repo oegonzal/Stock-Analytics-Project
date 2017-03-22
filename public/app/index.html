@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="psOptimize">
+	<head>
+		<meta http-equiv="content-type" content="text/html;" charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Optimize Page</title>
+		<base href="/">
+
+		<!-- CSS -->
+		<!-- bower:css -->
+		<link rel="stylesheet" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/lib/animate.css/animate.css" />
+		<link rel="stylesheet" href="assets/lib/metisMenu/dist/metisMenu.css" />
+		<!-- endbower -->
+
+		<link rel="stylesheet" href="assets/lib/angular-material/angular-material.css" />
+		
+		<!-- inject:css -->
+		<link rel="stylesheet" href="/assets/css/charts.css">
+		<link rel="stylesheet" href="/assets/css/sb-admin.css">
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<link rel="stylesheet" href="/assets/css/timeline.css">
+		<!-- endinject -->		
+
+	</head>
+	
+	<body ng-cloak>
+		
+		<!-- Navbar/Header -->
+		<header-section></header-section>
+		
+		<!-- Home Page -->
+		<view-page></view-page>
+		
+		<!-- Footer -->
+		<footer-section></footer-section>
+
+		<!-- Scripts -->
+		<!-- bower:js -->
+		<script src="assets/lib/jquery/dist/jquery.js"></script>
+		<script src="assets/lib/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="assets/lib/angular/angular.js"></script>
+		<script src="assets/lib/angular-component-router/angular_1_router.js"></script>
+		<script src="assets/lib/angular-component-router/ng_route_shim.js"></script>
+		<script src="assets/lib/angular-animate/angular-animate.js"></script>
+		<script src="assets/lib/metisMenu/dist/metisMenu.js"></script>
+		<script src="assets/lib/angular-resource/angular-resource.js"></script>
+		<!-- endbower -->
+		<script src="/app/app.module.js"></script>
+		<script src="/app/routes.module.js"></script>
+
+
+		<!-- React and Angular-material dependencies -->
+		<script src="/assets/js/d3.js"></script>
+		<script src="/assets/js/react.js"></script>
+		<script src="/assets/js/react-dom.min.js"></script>
+		<script src="/assets/js/babel.min.js"></script>
+		<script src="/assets/js/react-stockcharts.min.js"></script>
+
+		<!-- i====nject:js -->
+		<script src="/assets/js/sb-admin.js"></script>
+		<!-- endinject -->
+
+		<!-- Angular Material Dependencies -->
+		<script src="assets/lib/angular-aria/angular-aria.js"></script>
+		<script src="assets/lib/angular-messages/angular-messages.min.js"></script>
+		<script src="assets/lib/angular-material/angular-material.min.js"></script>
+
+
+		<!--Components-->
+		<!--<script src="/app/components/home/dashboard/view-page.component.js"></script>-->
+		<script src="/app/components/home/dashboard/dashboard.component.js"></script>
+		<script src="/app/shared/header/nav.component.js"></script>
+		<script src="/app/shared/footer/footer.component.js"></script>
+		<!--<script src="/app/components/investing/dashboard/invest-app.component.js"></script>-->
+		<script src="/app/components/investing/dashboard/invest-dashboard.component.js"></script>
+		<script src="/app/components/investing/graph/graph-page.component.js"></script>
+		<!--<script src="/app/components/investing/graph/barchart.vertical.directive.js"></script>
+		<script src="/app/components/investing/graph/barchart.horizontal.directive.js"></script>
+		<script src="/app/components/investing/graph/linegraph.directive.js"></script>
+		<script src="/app/components/investing/graph/scatterplot.directive.js"></script>-->
+		<script src="/app/components/investing/screen/screen-page.component.js"></script>
+		<script src="/app/components/investing/simulation/simulation-page.component.js"></script>
+		<script src="/app/components/investing/simulation/trade.component.js"></script>
+		<!--<script src="/app/components/investing/simulation/history.component.js"></script>-->
+		<script src="/app/components/investing/stock/stock-list.component.js"></script>
+		<script src="/app/components/investing/stock/stock-detail.component.js"></script>
+		<script src="/app/components/investing/stock/stock-create.component.js"></script>
+		<script src="/app/components/investing/stock/stock-delete.component.js"></script>
+		<script src="/app/components/investing/stock/stock-edit.component.js"></script>
+		<script src="/app/shared/services/api.service.js"></script>
+		<script src="/app/shared/services/helper.service.js"></script>
+		<script src="/app/components/investing/watchlist/stock-rating.component.js"></script>
+		<script src="/app/components/investing/watchlist/watchlist-page.component.js"></script>
+		<script src="/app/components/investing/reports/gold.component.js"></script>
+		<script src="/app/components/investing/reports/oil.component.js"></script>
+		<script src="/app/components/investing/graph/stockLineChart.directive.js"></script>
+		<script src="/app/components/investing/graph/macd.chart.directive.js"></script>
+		<script src="/app/components/investing/graph/rsi.chart.directive.js"></script>
+		<script src="/app/components/investing/graph/bollinger.chart.directive.js"></script>
+		<script src="/app/components/investing/graph/compare.chart.directive.js"></script>
+		<script src="/app/components/investing/graph/force.chart.directive.js"></script>
+		<script src="/app/components/investing/graph/stochastic.chart.directive.js"></script>
+		<script src="/app/components/investing/graph/volume.profile.chart.directive.js"></script>
+		<script src="/app/components/blogging/posts/main.component.js"></script>
+		<script src="/app/shared/header/page.component.js"></script>
+		<script src="/app/shared/ui_components/sidebar.component.js"></script>
+		
+
+		<!-- JSX compilations to ES5 from ES6 -->
+		<!--<script src="/app/index.js"></script>-->
+		
+		<!-- Plugin Directive js files -->
+		<script src="/app/plugins/metismenu.directive.js"></script>
+		<script src="/app/shared/console.save.js"></script>
+
+	</body>
+</html>

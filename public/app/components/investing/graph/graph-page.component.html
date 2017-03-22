@@ -1,0 +1,32 @@
+<page-header>Graph</page-header>
+
+<form>
+	<label>Index</label>
+	<input ng-model="chartOptions.index" type="text">
+
+	<label>Range</label>
+	<input ng-model="chartOptions.range" type="text">
+
+	<label>Moving Average</label>
+	<input ng-model="chartOptions.eMovAvg1" type="text">
+
+	<a class="btn btn-default" ng-click="vm.getCharts()">Submit</a>
+</form>
+<br>
+<br>
+
+<macd-chart chart-options="chartOptions"></macd-chart>
+<volume-profile-chart chart-options="chartOptions"></volume-profile-chart>
+<rsi-chart chart-options="chartOptions"></rsi-chart>
+<bollinger-chart chart-options="chartOptions"></bollinger-chart>
+<compare-chart chart-options="chartOptions"></compare-chart>
+
+<!--
+
+
+
+
+<stock-line-chart chart-options="chartOptions"></stock-line-chart>
+<stochastic-chart></stochastic-chart>
+<force-chart></force-chart>
+-->
